@@ -6,6 +6,7 @@ TagManager:
   tags:
   - baseFieldList
   - baseFieldHexagon
+  - baseField
   layers:
   - Default
   - TransparentFX
