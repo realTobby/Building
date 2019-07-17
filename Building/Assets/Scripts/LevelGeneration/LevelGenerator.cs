@@ -13,19 +13,31 @@ public class LevelGenerator : MonoBehaviour
     {
         var parent = GameObject.FindGameObjectWithTag("baseFieldList");
 
-        randomTileNumber = Random.Range(10, 25);
+        float cornerX = 0f;
+        float cornerY = 0f;
 
+        float realY = 0f;
 
-        Instantiate(prefabHexagonBaseTile, new Vector3(0,0,0), prefabHexagonBaseTile.transform.rotation, parent.transform);
-        Instantiate(prefabHexagonBaseTile, new Vector3(-1.75f, 0, 0), prefabHexagonBaseTile.transform.rotation, parent.transform);
-        Instantiate(prefabHexagonBaseTile, new Vector3(1.75f, 0, 0), prefabHexagonBaseTile.transform.rotation, parent.transform);
+        for(int row = 0; row < 10; row++)
+        {
+            if (row % 2 == 0)
+            {
+                cornerX = 0f;
+                cornerY = 0f;
+                
+            }
+            else
+            {
+                cornerX = -1.7f;
+                cornerY = -.8f;
+            }
+            for(float field = cornerY; field < 10; field+=1.8f)
+            {
+                Instantiate(prefabHexagonBaseTile, new Vector3(field, 0, realY), prefabHexagonBaseTile.transform.rotation, parent.transform);
 
-
-        Instantiate(prefabHexagonBaseTile, new Vector3(.9f, 0, -1.55f), prefabHexagonBaseTile.transform.rotation, parent.transform);
-        Instantiate(prefabHexagonBaseTile, new Vector3(.9f, 0, 1.55f), prefabHexagonBaseTile.transform.rotation, parent.transform);
-
-        Instantiate(prefabHexagonBaseTile, new Vector3(-.9f, 0, -1.55f), prefabHexagonBaseTile.transform.rotation, parent.transform);
-        Instantiate(prefabHexagonBaseTile, new Vector3(-.9f, 0, 1.55f), prefabHexagonBaseTile.transform.rotation, parent.transform);
+            }
+            realY += 1.7f;
+        }
 
     }
 
