@@ -12,8 +12,6 @@ public class LevelGenerator : MonoBehaviour
     void Start()
     {
         var parent = GameObject.FindGameObjectWithTag("baseFieldList");
-
-        float cornerX = 0f;
         float cornerY = 0f;
 
         float realY = 0f;
@@ -22,18 +20,15 @@ public class LevelGenerator : MonoBehaviour
         {
             if (row % 2 == 0)
             {
-                cornerX = 0f;
                 cornerY = 0f;
-                
             }
             else
             {
-                cornerX = -1.7f;
                 cornerY = -.8f;
             }
             for(float field = cornerY; field < 10; field+=1.8f)
             {
-                Instantiate(prefabHexagonBaseTile, new Vector3(field, 0, realY), prefabHexagonBaseTile.transform.rotation, parent.transform);
+                Instantiate(prefabHexagonBaseTile, new Vector3(field, prefabHexagonBaseTile.transform.position.y, realY), prefabHexagonBaseTile.transform.rotation, parent.transform);
 
             }
             realY += 1.7f;
