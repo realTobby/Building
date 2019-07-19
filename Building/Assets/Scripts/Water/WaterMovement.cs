@@ -25,7 +25,10 @@ public class WaterMovement : MonoBehaviour
         DoNoise();
 
         offsetX += Time.deltaTime * timeScale;
-        offsetY += Time.deltaTime * timeScale;
+        if (offsetY <= 0.1) offsetY += Time.deltaTime * timeScale;
+        if (offsetY >= power) offsetY -= Time.deltaTime * timeScale;
+
+
 
     }
 
