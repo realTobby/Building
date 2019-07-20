@@ -1,6 +1,15 @@
 # Building
-My Game :)
+I am making a game with unity!
 
-Current Progress:
+Concept:
+- day and night cycle
+- build stuff
+- farm stuff
+- craft stuff
+- kill stuff
+- sandbox
+- low poly art style
+
+Last progess status:
 
 ![](https://github.com/realTobby/Building/blob/master/Progess%20Screenshots/day5.gif)
