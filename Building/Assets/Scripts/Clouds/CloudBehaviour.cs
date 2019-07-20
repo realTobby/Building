@@ -17,9 +17,9 @@ public class CloudBehaviour : MonoBehaviour
         this.transform.localScale = new Vector3(Random.Range(1f, 3f), 0.2f, Random.Range(1f, 3f));
     }
 
-    void RandomStartPosition()
+    void RandomStartPosition(float startX, float endX)
     {
-        this.transform.position = new Vector3(Random.Range(30,50), this.transform.position.y, Random.Range(-20,20));
+        this.transform.position = new Vector3(Random.Range(startX, endX), Random.Range(this.transform.position.y-2, this.transform.position.y+1), Random.Range(-20,20));
     }
 
     // Update is called once per frame
@@ -30,17 +30,17 @@ public class CloudBehaviour : MonoBehaviour
         if(this.transform.position.x <= -10f)
         {
             RandomScale();
-            RandomStartPosition();
+            RandomStartPosition(30, 50);
         }
     }
 
     public void InitMainScreen()
     {
-        this.transform.position = new Vector3(Random.Range(0, 30), this.transform.position.y, Random.Range(-20, 20));
+        RandomStartPosition(0, 30);
     }
 
     public void InitOffScreen()
     {
-        RandomStartPosition();
+        RandomStartPosition(30, 50);
     }
 }

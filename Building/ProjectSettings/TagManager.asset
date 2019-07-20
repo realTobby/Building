@@ -8,6 +8,7 @@ TagManager:
   - baseFieldHexagon
   - baseField
   - baseCloudList
+  - fieldMarker
   layers:
   - Default
   - TransparentFX

@@ -180,7 +180,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9433962, g: 0.7869075, b: 0.27144888, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -320,13 +320,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 3.88, y: 12.92, z: -11.13}
+  m_LocalRotation: {x: 0.3429283, y: -0, z: -0, w: 0.93936163}
+  m_LocalPosition: {x: 4.24, y: 15.88, z: -11.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.111, y: 0, z: 0}
 --- !u!1 &1004519814
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,9 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectableTag: baseField
-  highlightedMaterial: {fileID: 2100000, guid: c97f04ddda7cb0344b307b43f2d1737f, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 8a5a86c4960763347ad768502973b117, type: 2}
-  _selection: {fileID: 0}
+  referenceMarker: {fileID: 0}
 --- !u!4 &1004519816
 Transform:
   m_ObjectHideFlags: 0
@@ -372,7 +370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004519814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalPosition: {x: 45.5, y: -10, z: 76.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 64900967}
@@ -391,8 +389,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 2
-  scale: 20
-  timeScale: 0.007
+  scale: 10
+  timeScale: 0.001
 --- !u!114 &1004519818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,8 +403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3884ea3fa6302847925a319eb80a3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 100
-  gridSize: 16
+  size: 200
+  gridSize: 80
 --- !u!23 &1004519819
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -464,6 +462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1788654021}
   - component: {fileID: 1788654020}
+  - component: {fileID: 1788654022}
   m_Layer: 0
   m_Name: BaseFieldList
   m_TagString: baseFieldList
@@ -483,6 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58494162b3a28c478de2bc4f5b058e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playfieldSize: 25
   randomTileNumber: 0
   prefabHexagonBaseTile: {fileID: 3450183501415481851, guid: b8768d4899749cd47b6fbb155648dc68,
     type: 3}
@@ -500,6 +500,21 @@ Transform:
   m_Father: {fileID: 64900967}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1788654022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788654019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea3829a4810cec419c6e2337778ce16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectableTag: baseField
+  referenceMarker: {fileID: 2226888487873724465, guid: 48568359762fa9c4a94cc7026e48368f,
+    type: 3}
 --- !u!1 &1897633587
 GameObject:
   m_ObjectHideFlags: 0

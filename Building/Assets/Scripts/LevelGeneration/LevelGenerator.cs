@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    public int playfieldSize = 25;
+
     public int randomTileNumber = 0;
     public GameObject prefabHexagonBaseTile;
 
@@ -16,7 +18,7 @@ public class LevelGenerator : MonoBehaviour
 
         float realY = 0f;
 
-        for(int row = 0; row < 10; row++)
+        for(int row = 0; row < playfieldSize; row++)
         {
             if (row % 2 == 0)
             {
@@ -26,12 +28,13 @@ public class LevelGenerator : MonoBehaviour
             {
                 cornerY = -.8f;
             }
-            for(float field = cornerY; field < 10; field+=1.8f)
+
+            for(float field = cornerY; field < playfieldSize; field+=1.8f)
             {
                 Instantiate(prefabHexagonBaseTile, new Vector3(field, prefabHexagonBaseTile.transform.position.y, realY), prefabHexagonBaseTile.transform.rotation, parent.transform);
 
             }
-            realY += 1.7f;
+            realY += 1.6f;
         }
 
     }
