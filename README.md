@@ -9,6 +9,7 @@ Concept:
 - kill stuff
 - sandbox
 - low poly art style
+- top down god-like sandbox
 
 Last progess status:
 
