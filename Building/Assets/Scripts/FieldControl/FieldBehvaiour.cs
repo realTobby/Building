@@ -7,6 +7,7 @@ public class FieldBehvaiour : MonoBehaviour
     public GameObject fieldPrefabList;
     public FieldPrefabs prefabList;
 
+    public GameObject placedObject;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +30,19 @@ public class FieldBehvaiour : MonoBehaviour
                 GenerateRocks();
                 break;
         }
+        RefreshBuilding();
+    }
 
-
-
+    public void RefreshBuilding()
+    {
+        if(placedObject != null)
+        {
+            // delete child object
+            if (this.transform.childCount > 0)
+                Destroy(this.transform.GetChild(0));
+            Instantiate(placedObject, new Vector3(this.transform.position.x, 2.3f, this.transform.position.z), placedObject.transform.rotation, this.transform);
+        }
+        
     }
 
     void GenerateVegetation()
@@ -43,16 +54,16 @@ public class FieldBehvaiour : MonoBehaviour
                 // nothing :)
                 break;
             case 1:
-                Instantiate(prefabList.tree1, new Vector3(this.transform.position.x, 2.3f, this.transform.position.z), prefabList.tree1.transform.rotation, this.transform);
+                placedObject = prefabList.tree1;
                 break;
             case 2:
-                Instantiate(prefabList.tree2, new Vector3(this.transform.position.x, 2.3f, this.transform.position.z), prefabList.tree2.transform.rotation, this.transform);
+                placedObject = prefabList.tree2;
                 break;
             case 3:
-                Instantiate(prefabList.tree3, new Vector3(this.transform.position.x, 2.3f, this.transform.position.z), prefabList.tree3.transform.rotation, this.transform);
+                placedObject = prefabList.tree3;
                 break;
             case 4:
-                Instantiate(prefabList.plant1, new Vector3(this.transform.position.x, 2.3f, this.transform.position.z), prefabList.plant1.transform.rotation, this.transform);
+                placedObject = prefabList.plant1;
                 break;
         }
     }

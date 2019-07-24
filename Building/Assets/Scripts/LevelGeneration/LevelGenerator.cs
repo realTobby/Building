@@ -29,12 +29,12 @@ public class LevelGenerator : MonoBehaviour
                 cornerY = -.8f;
             }
 
-            for(float field = cornerY; field < playfieldSize; field+=1.8f)
+            for(float field = cornerY; field < playfieldSize; field+=1.7f)
             {
                 Instantiate(prefabHexagonBaseTile, new Vector3(field, prefabHexagonBaseTile.transform.position.y, realY), prefabHexagonBaseTile.transform.rotation, parent.transform);
 
             }
-            realY += 1.6f;
+            realY += 1.5f;
         }
 
     }
