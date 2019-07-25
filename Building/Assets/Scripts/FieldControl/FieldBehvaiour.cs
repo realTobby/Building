@@ -50,9 +50,6 @@ public class FieldBehvaiour : MonoBehaviour
         int veggieIndex = Random.Range(0, 4);
         switch(veggieIndex)
         {
-            case 0:
-                // nothing :)
-                break;
             case 1:
                 placedObject = prefabList.tree1;
                 break;
@@ -86,6 +83,10 @@ public class FieldBehvaiour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        var texture = GetComponent<Texture>();
+        GetComponent<Material>().mainTextureOffset = GetComponent<Material>().mainTextureOffset + Vector2.up * Time.deltaTime;
+
+
     }
 }

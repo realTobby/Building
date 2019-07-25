@@ -28,7 +28,8 @@ public class WaterMovement : MonoBehaviour
         if (offsetY <= 0.1) offsetY += Time.deltaTime * timeScale;
         if (offsetY >= power) offsetY -= Time.deltaTime * timeScale;
 
-
+        var texture = GetComponent<Texture>();
+        GetComponent<Material>().mainTextureOffset = GetComponent<Material>().mainTextureOffset + Vector2.up * Time.deltaTime;
 
     }
 
